@@ -18,7 +18,7 @@ function Navbar({ numOfCartItems, setCartItems }) {
     <nav className="top-0 w-full border-b-2 border-theme-dark-blue">
       <div className="flex flex-row justify-between px-12 py-4">
         <div className="text-lg uppercase font-bold text-theme-dark-blue flex items-center">
-          React Shopping Cart
+          Shopping Cart
         </div>
         {/* Desktop Menu */}
         <div
@@ -71,8 +71,8 @@ function Navbar({ numOfCartItems, setCartItems }) {
           } flex md:hidden flex-col gap-16 fixed transition-transform  duration-300 right-0 ease-in-out min-h-screen w-[60%] top-0 z-50 px-8 py-4 bg-theme-plat`}
         >
           <div className="border-b-2 border-b-black w-full flex flex-row justify-between">
-            <p className="text-xl uppercase font-bold text-theme-dark-blue ">
-              React Shopping Cart
+            <p className="text-lg uppercase font-bold text-theme-dark-blue ">
+              REACT
             </p>
             <Close
               onClick={toggleMobileMenu}

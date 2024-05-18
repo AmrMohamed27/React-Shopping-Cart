@@ -48,8 +48,10 @@ function Shop() {
   return (
     <section className="w-full">
       <div className="grid grid-cols-3 min-h-screen">
-        <aside className=" p-12 bg-theme-plat flex flex-col gap-12 border-r-2 border-theme-dark-blue">
-          <h3 className="uppercase font-bold text-3xl text-theme-dark-blue">
+        <aside
+          className={`flex p-12 bg-theme-plat relative flex-col col-span-3 lg:col-span-1 border-b-2 sm:border-b-0 gap-12 lg:border-r-2 border-theme-dark-blue`}
+        >
+          <h3 className="uppercase font-bold text-md text-xl md:text-3xl text-theme-dark-blue">
             Choose Category:
           </h3>
           <ul className="flex flex-col gap-8 ">
@@ -64,7 +66,7 @@ function Shop() {
                 <li
                   key={index}
                   onClick={() => setCurrentCategory(index)}
-                  className={`flex flex-row justify-between items-center cursor-pointer text-black uppercase hover:text-theme-blue border-b-2 border-theme-dark-blue hover:border-theme-blue text-lg`}
+                  className={`flex flex-row justify-between items-center cursor-pointer text-black uppercase hover:text-theme-blue border-b-2 border-theme-dark-blue hover:border-theme-blue text-sm sm:text-md md:text-2xl`}
                 >
                   <p>{category}</p>
                   {currentCategory === index && <Checkmark />}
@@ -72,8 +74,10 @@ function Shop() {
               ))}
           </ul>
         </aside>
-        <main className="p-12 bg-theme-plat flex flex-col gap-8 col-span-2">
-          <h3 className="uppercase font-bold text-3xl text-theme-dark-blue">
+        <main
+          className={`p-12 bg-theme-plat flex flex-col gap-8 col-span-3 lg:col-span-2`}
+        >
+          <h3 className="uppercase font-bold text-xl md:text-3xl text-theme-dark-blue">
             Products:
           </h3>
           <ul className="flex flex-col gap-8">

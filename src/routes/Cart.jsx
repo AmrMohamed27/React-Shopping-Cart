@@ -6,7 +6,7 @@ function Cart() {
   return (
     <section className="w-full min-h-screen bg-theme-plat p-16">
       <div className="max-w-[80%] mx-auto flex flex-col justify-center items-center gap-16">
-        <h1 className="uppercase font-bold text-3xl text-theme-dark-blue">
+        <h1 className="uppercase font-bold text-xl md:text-3xl text-theme-dark-blue">
           Current items in Cart:
         </h1>
         <div className="w-full">

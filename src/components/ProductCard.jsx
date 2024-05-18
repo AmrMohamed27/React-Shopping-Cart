@@ -28,36 +28,42 @@ function ProductCard({ product, setCartItems, cartItems, quantityProp, page }) {
         <img src={product.image} alt={product.title} width={150} />
       </div>
       <div className="flex flex-col relative items-center justify-center gap-4 w-full">
-        <h2 className="text-2xl">{product.title}</h2>
-        <div className="text-3xl absolute top-0 right-0">
-          {showDesc ? (
-            <DropUp className="cursor-pointer" onClick={toggleShowDesc} />
-          ) : (
-            <DropDown className="cursor-pointer" onClick={toggleShowDesc} />
-          )}
+        <div className="flex flex-row justify-between w-full">
+          <h2 className="text-lg md:text-2xl flex-1">{product.title}</h2>
+          <div className="text-2xl md:text-3xl flex items-center">
+            {showDesc ? (
+              <DropUp className="cursor-pointer" onClick={toggleShowDesc} />
+            ) : (
+              <DropDown className="cursor-pointer" onClick={toggleShowDesc} />
+            )}
+          </div>
         </div>
-        {showDesc && <p>{product.description}</p>}
-        <p className="text-3xl text-theme-blue">${product.price}</p>
+        {showDesc && (
+          <p className="text-sm md:text-lg">{product.description}</p>
+        )}
+        <p className="text-xl md:text-3xl text-theme-blue">${product.price}</p>
         <StarRating rating={product.rating.rate} />
-        <p className="text-lg">rated by: {product.rating.count} customers</p>
+        <p className="text-sm md:text-lg">
+          rated by: {product.rating.count} customers
+        </p>
       </div>
-      <div className="flex flex-row gap-8 items-center">
-        <div className="flex flex-row items-center gap-2">
-          <label htmlFor="quantity" className="text-lg">
+      <div className="flex flex-row gap-8 items-center flex-wrap md:flex-nowrap">
+        <div className="flex flex-row items-center gap-2 w-full md:w-auto">
+          <label htmlFor="quantity" className="text-md md:text-lg">
             Quantity:{" "}
           </label>
           <input
             type="number"
             name="quantity"
             min={0}
-            className="text-xl px-2 py-1"
+            className="text-lg md:text-xl px-2 py-1 flex-1 md:flex-grow-0 md:flex-shrink-0"
             value={quantityProp ? quantityProp : quantity}
             onChange={(e) => handleQuantityChange(e)}
             disabled={page === "cart"}
           />
         </div>
         <button
-          className="bg-theme-blue text-white px-4 py-2 rounded-lg"
+          className="bg-theme-blue text-white px-2 py-2 w-full md:w-auto md:px-4 rounded-lg"
           onClick={
             page === "shop"
               ? () => setCartItems([...cartItems, { ...product, quantity }])

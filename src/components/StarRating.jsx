@@ -21,7 +21,7 @@ const StarRating = ({ rating }) => {
   };
 
   return (
-    <div className="flex flex-row items-center gap-1 text-xl">
+    <div className="flex flex-row items-center gap-1 text-sm md:text-xl">
       {renderStars()}
     </div>
   );
